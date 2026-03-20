@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yt-search</title>
+    <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --bg: #f4f4f4;
+            --fg: #111111;
+            --accent: #ff0000;
+            --border: #cccccc;
+        }
+
+        /* Automatically switches based on your OS settings */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111111;
+                --fg: #eeeeee;
+                --accent: #ff5555;
+                --border: #444444;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: monospace; /* Gives it that raw, terminal feel */
+        }
+
+        .ascii-art {
+            white-space: pre;
+            font-size: clamp(10px, 2vw, 16px);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            color: var(--fg);
+	    margin: -26vh 0 0 0;
+        }
+
+        form {
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-family: monospace;
+            background-color: transparent;
+            color: var(--fg);
+            border: 1px solid var(--border);
+            border-radius: 0;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--accent);
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-family: monospace;
+            background-color: transparent;
+            color: var(--fg);
+            border: 1px solid var(--border);
+            border-left: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ascii-art">
+ __  __       _____     _          
+ \ \/ /      |_   _|   | |         
+  \  /___  _   | |_   _| |__   ___ 
+  /  // _ \| | | | | | | '_ \ / _ \
+ /  /| (_) | |_| | |_| | |_) |  __/
+/__/  \___/ \__,_|\__,_|_.__/ \___|
+    </div>
+
+    <form action="https://www.youtube.com/results" method="get">
+        <input type="text" name="search_query" placeholder="search..." autocomplete="off" autofocus>
+        <button type="submit">></button>
+    </form>
+
+</body>
+</html>
