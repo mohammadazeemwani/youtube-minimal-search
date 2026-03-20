@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .bg { fill: #cc0000; } /* Deeper red for light mode */
+    .play { fill: #f4f4f4; } /* Matches light mode background */
+    
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #ff5555; } /* Brighter red for dark mode */
+      .play { fill: #111111; } /* Matches dark mode background */
+    }
+  </style>
+  <rect x="10" y="25" width="80" height="50" rx="12" class="bg" />
+  <polygon points="42,40 42,60 62,50" class="play" />
+</svg>
+
